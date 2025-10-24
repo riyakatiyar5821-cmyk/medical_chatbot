@@ -1,5 +1,6 @@
 import streamlit as st
 import os
+from langchain_community.embeddings import HuggingFaceEmbeddings
 
 from langchain_huggingface import HuggingFaceEmbeddings
 from langchain.chains import RetrievalQA
@@ -106,3 +107,4 @@ def main():
 
 if __name__ == "__main__":
     main()
+
