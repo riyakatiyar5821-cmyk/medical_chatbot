@@ -1,6 +1,10 @@
 import streamlit as st
 import os
-from langchain_huggingface import HuggingFaceEmbeddings
+
+from langchain.embeddings import HuggingFaceEmbeddings
+
+from langchain_community.embeddings import HuggingFaceEmbeddings
+
 from langchain.chains import RetrievalQA
 from langchain_community.vectorstores import FAISS
 from langchain_core.prompts import PromptTemplate
@@ -105,5 +109,6 @@ def main():
 
 if __name__ == "__main__":
     main()
+
 
 
