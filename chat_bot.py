@@ -2,7 +2,6 @@ import streamlit as st
 import os
 
 from langchain_community.embeddings import HuggingFaceEmbeddings
-from langchain_community.chat_models import HuggingFaceHub
 from langchain_community.chains import RetrievalQA
 from langchain_community.vectorstores import FAISS
 from langchain_core.prompts import PromptTemplate
@@ -111,6 +110,7 @@ def main():
 
 if __name__ == "__main__":
     main()
+
 
 
 
