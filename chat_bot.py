@@ -1,14 +1,11 @@
 import streamlit as st
 import os
 
-#from langchain.embeddings import HuggingFaceEmbeddings
-
-from langchain_community.embeddings import HuggingFaceEmbeddings
+from langchain.embeddings import HuggingFaceEmbeddings
 from langchain.chains import RetrievalQA
-
-from langchain_community.vectorstores import FAISS
-from langchain_core.prompts import PromptTemplate
-from langchain_huggingface import HuggingFaceEndpoint
+from langchain.vectorstores import FAISS
+from langchain.prompts import PromptTemplate
+from langchain.chat_models import HuggingFaceHub
 
 # Constants
 DB_FAISS_PATH = "vectorstore/db_FAISS"
@@ -37,10 +34,9 @@ def set_custom_prompt(custom_prompt_template):
 
 # Load Hugging Face LLM
 def load_llm(huggingface_repo_id, HF_TOKEN):
-    llm = HuggingFaceEndpoint(
+    llm = HuggingFaceHub(
         repo_id=huggingface_repo_id,
-        temperature=0.5,
-        max_new_tokens=512,
+        model_kwargs={"temperature": 0.5, "max_new_tokens": 512},
         huggingfacehub_api_token=HF_TOKEN
     )
     return llm
@@ -109,9 +105,3 @@ def main():
 
 if __name__ == "__main__":
     main()
-
-
-
-
-
-
