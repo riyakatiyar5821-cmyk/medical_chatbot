@@ -5,7 +5,8 @@ from langchain.embeddings import HuggingFaceEmbeddings
 from langchain.chains import RetrievalQA
 from langchain.vectorstores import FAISS
 from langchain.prompts import PromptTemplate
-from langchain.chat_models import HuggingFaceHub
+from langchain_community.chat_models import HuggingFaceHub
+
 
 # Constants
 DB_FAISS_PATH = "vectorstore/db_FAISS"
@@ -105,3 +106,4 @@ def main():
 
 if __name__ == "__main__":
     main()
+
