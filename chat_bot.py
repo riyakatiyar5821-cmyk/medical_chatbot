@@ -6,6 +6,8 @@ from langchain_community.chat_models import HuggingFaceHub
 from langchain_community.chains import RetrievalQA
 from langchain_community.vectorstores import FAISS
 from langchain_core.prompts import PromptTemplate
+from langchain.chat_models import HuggingFaceHub
+
 
 
 
@@ -109,6 +111,7 @@ def main():
 
 if __name__ == "__main__":
     main()
+
 
 
 
